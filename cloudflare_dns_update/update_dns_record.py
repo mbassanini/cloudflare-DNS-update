@@ -22,7 +22,7 @@ def get_Public_IP():
     print("INFO: Current IP")
     print(res)
     
-def get_DNS_Record():
+def get_DNS_Record(zone_ID):
     print("INFO: Retrieving DNS records from Cloudflare")
     print("1")
     print(zone_ID)
@@ -53,7 +53,7 @@ while True:
         print("INFO: Publc IP address has not changed!")
     else:
         #Get list of DNS records, to find the DNS record ID
-        DNS_record_ID, DNS_Content = get_DNS_Record()
+        DNS_record_ID, DNS_Content = get_DNS_Record(zone_ID)
         if not DNS_record_ID or not DNS_Content:
             print("ERROR: DNS Record not found! Check config file and/or Cloudflare domain configuration")
             exit()
