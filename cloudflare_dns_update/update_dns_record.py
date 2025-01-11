@@ -9,7 +9,7 @@ domain = sys.argv[3]
 sleepTime = int(sys.argv[4])
 
 connCloudflare = http.client.HTTPSConnection("api.cloudflare.com")
-headers = {
+header = {
     'authorization': f"Bearer {API_Token}",
     'content-type': "application/json"
 }
@@ -19,10 +19,11 @@ def get_Public_IP():
     conn.request("GET","/")
     res = conn.getresponse()
     return res.read().decode("utf-8")
+    print("INFO: Current IP " & res)
     
 def get_DNS_Record():
     print("INFO: Retrieving DNS records from Cloudlare")
-    connCloudflare.request("GET", "/client/v4/zones/{zone_ID}/dns_records", headers=headers)
+    connCloudflare.request("GET", "/client/v4/zones/{zone_ID}/dns_records", headers=header)
     res = connCloudflare.getresponse()
     response = json.load(res)
     print(response)
