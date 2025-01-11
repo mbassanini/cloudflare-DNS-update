@@ -19,7 +19,8 @@ def get_Public_IP():
     conn.request("GET","/")
     res = conn.getresponse()
     return res.read().decode("utf-8")
-    print("INFO: Current IP " & res)
+    print("INFO: Current IP")
+    print(res)
     
 def get_DNS_Record():
     print("INFO: Retrieving DNS records from Cloudlare")
