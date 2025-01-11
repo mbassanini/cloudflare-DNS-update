@@ -1,3 +1,3 @@
 ## 0.2.0
 
-- Initial release on Github
+- Updated release on Github
