@@ -26,7 +26,7 @@ def get_DNS_Record():
     print("INFO: Retrieving DNS records from Cloudflare")
     print("1")
     print(zone_ID)
-    connCloudflare.request("GET", "/client/v4/zones/e89fe1d516baa558000370fb9a3fb899/dns_records", headers=header)
+    connCloudflare.request("GET", "/client/v4/zones/{zone_ID}/dns_records", headers=header)
     res = connCloudflare.getresponse()
     response = json.load(res)
     print(response)
@@ -39,7 +39,7 @@ def get_DNS_Record():
 def update_DNS_Record(DNS_record_ID, public_IP):
     print("INFO: Updating DNS record")
     payload = f"{{\"content\":\"{public_IP}\",\"type\":\"A\"}}"
-    connCloudflare.request("PATCH", f"/client/v4/zones/e89fe1d516baa558000370fb9a3fb899/dns_records/{DNS_record_ID}", payload, header)
+    connCloudflare.request("PATCH", f"/client/v4/zones/{zone_ID}/dns_records/{DNS_record_ID}", payload, header)
     res = connCloudflare.getresponse()
     response = json.load(res)
     print(response)
