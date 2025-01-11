@@ -1,4 +1,4 @@
 ---
 name: Cloudflare DNS Update
-url: "https://github.com/jeroenvdw/hassio-cloudflare-update"
+url: "https://github.com/mbassanini/hassio-cloudflare-dns-update"
 maintainer: Jeroen Vandewal <https://github.com/jeroenvdw>
