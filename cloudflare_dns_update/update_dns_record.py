@@ -22,7 +22,7 @@ def get_Public_IP():
     print("INFO: Current IP")
     print(res)
     
-def get_DNS_Record():
+def get_DNS_Record(zone_ID):
     print("INFO: Retrieving DNS records from Cloudflare")
     print("1")
     print(zone_ID)
