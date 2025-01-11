@@ -10,7 +10,7 @@ sleepTime = int(sys.argv[4])
 
 connCloudflare = http.client.HTTPSConnection("api.cloudflare.com")
 headers = {
-    'authorization': f"Bearer {API_Token}",
+    'authorization': "Bearer {API_Token}",
     'content-type': "application/json"
 }
 
