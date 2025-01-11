@@ -51,7 +51,7 @@ while True:
         print("INFO: Publc IP address has not changed!")
     else:
         #Get list of DNS records, to find the DNS record ID
-        DNS_record_ID, DNS_Content = get_DNS_Record(zone_ID)
+        DNS_record_ID, DNS_Content = get_DNS_Record()
         if not DNS_record_ID or not DNS_Content:
             print("ERROR: DNS Record not found! Check config file and/or Cloudflare domain configuration")
             exit()
