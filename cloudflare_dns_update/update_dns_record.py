@@ -26,7 +26,7 @@ def get_DNS_Record():
     print("INFO: Retrieving DNS records from Cloudflare")
     print("1")
     print(zone_ID)
-    connCloudflare.request("GET", "/client/v4/zones/e89fe1d516baa558000370fb9a3fb899/dns_records", header)
+    connCloudflare.request("GET", "/client/v4/zones/e89fe1d516baa558000370fb9a3fb899/dns_records", headers=header)
     res = connCloudflare.getresponse()
     response = json.load(res)
     print(response)
