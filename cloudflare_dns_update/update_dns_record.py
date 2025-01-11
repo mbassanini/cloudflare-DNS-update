@@ -23,7 +23,7 @@ def get_Public_IP():
     print(res)
     
 def get_DNS_Record():
-    print("INFO: Retrieving DNS records from Cloudlare")
+    print("INFO: Retrieving DNS records from Cloudflare")
     print("1")
     connCloudflare.request("GET", "/client/v4/zones/{zone_ID}/dns_records", headers=header)
     res = connCloudflare.getresponse()
@@ -54,7 +54,7 @@ while True:
         #Get list of DNS records, to find the DNS record ID
         DNS_record_ID, DNS_Content = get_DNS_Record()
         if not DNS_record_ID or not DNS_Content:
-            print("ERROR: DNS Record not found! Check config file and/or Cloudlare domain configuration")
+            print("ERROR: DNS Record not found! Check config file and/or Cloudflare domain configuration")
             exit()
 
         #Update the DNS Record?
